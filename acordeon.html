@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{ font-family: sans-serif; margin: 0;}
+		ul{ margin: 60px auto; width: 600px; list-style: none; }
+		h3, div p{ padding: 20px; }
+		dt{ background: #333333; color: white; border-bottom: 1px solid #141414; border-top: 1px solid #4E4E4E; cursor: pointer; }
+		div{ background: #F5F5F5; display: none; line-height: 1.6em; }
+		h3.activo, h3:hover{ background: #424242; }
+
+		h3:before{ content: "▸"; margin-right: 10px; }
+		h3.activo:before{ content: "▾"; }
+	</style>	
+</head>
+<body>
+	<ul>
+		<li>
+			<h3>Lorem ipsum</h3>
+			<div><p> dolor sit amet</p></div>
+		</li>
+		<li>
+			<h3>Lorem ipsum</h3>
+			<div><p>dolor sit amet</p></div>
+		</li>
+		<li>
+			<h3>Lorem ipsum</h3>
+			<div><p>dolor sit amet</p></div>
+		</li>
+
+	</ul>	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+	   $('ul div').hide();
+       $('ul h3').click(function(){
+          if ($(this).hasClass('activo')) {
+               $(this).removeClass('activo');
+               $(this).next().slideUp();
+          } else {
+               $('ul h3').removeClass('activo');
+               $(this).addClass('activo');
+               $('ul div').slideUp();
+               $(this).next().slideDown();
+          }
+       });
+	</script>
+</body>
+</html>
